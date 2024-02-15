@@ -21,6 +21,8 @@ import * as Joi from '@hapi/joi';
         EMAIL_SERVICE: Joi.string().required(),
         EMAIL_USER: Joi.string().required(),
         EMAIL_PASSWORD: Joi.string().required(),
+        TMDB_URL: Joi.string().required(),
+        TMDB_KEY: Joi.string().required(),
       }),
     }),
   ],

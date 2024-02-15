@@ -26,6 +26,9 @@ export class AuthService {
   async loginUser(loginUserDto: LoginUserDto) {
     const user = await this.userService.findoneByEmail(loginUserDto.email);
     const ispwMatched = user.checkPassword(loginUserDto.password);
+    if (!ispwMatched) {
+      throw new HttpException('password do not match', HttpStatus.BAD_REQUEST);
+    }
     return user;
   }
 

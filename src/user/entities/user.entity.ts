@@ -32,9 +32,8 @@ export class User extends BaseEntity {
   async checkPassword(aPassword: string) {
     try {
       const ispwmatched = await bcrypt.compare(aPassword, this.password);
-      if (!ispwmatched)
-        throw new HttpException('wrong password', HttpStatus.BAD_REQUEST);
-      return true;
+
+      return ispwmatched;
     } catch (e) {
       console.log(e);
       throw new InternalServerErrorException();

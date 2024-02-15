@@ -7,9 +7,10 @@ import { DblistModule } from './dblist/dblist.module';
 import { AuthModule } from './auth/auth.module';
 import { RedisModule } from './redis/redis.module';
 import { EmailModule } from './email/email.module';
+import { MovieModule } from './movie/movie.module';
 
 @Module({
-  imports: [UserModule, AppconfigModule, DblistModule, AuthModule, RedisModule, EmailModule],
+  imports: [UserModule, AppconfigModule, DblistModule, AuthModule, RedisModule, EmailModule, MovieModule],
   controllers: [AppController],
   providers: [AppService],
 })
